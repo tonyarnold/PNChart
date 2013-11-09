@@ -98,7 +98,7 @@
     
     UIBezierPath *progressline = [UIBezierPath bezierPath];
     
-    CGFloat firstValue = [[_yValues objectAtIndex:0] floatValue];
+    CGFloat firstValue = [_yValues[0] floatValue];
     
     CGFloat xPosition = (xLabelMargin + _xLabelWidth)   ;
     
@@ -137,8 +137,8 @@
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     pathAnimation.duration = 1.0;
     pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-    pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+    pathAnimation.fromValue = @0.0f;
+    pathAnimation.toValue = @1.0f;
     pathAnimation.autoreverses = NO;
     [_chartLine addAnimation:pathAnimation forKey:@"strokeEndAnimation"];
     
