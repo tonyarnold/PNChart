@@ -75,8 +75,8 @@
 -(void)setXLabels:(NSArray *)xLabels
 {
     _xLabels = xLabels;
-    _xLabelWidth = (self.frame.size.width - chartMargin - 30.0 - ([xLabels count] -1) * xLabelMargin)/5.0;
-    
+    _xLabelWidth = (self.frame.size.width - chartMargin - 30.0 - ([xLabels count] -1) * xLabelMargin)/[_xLabels count];
+
     for (NSString * labelText in xLabels) {
         NSInteger index = [xLabels indexOfObject:labelText];
         PNChartLabel * label = [[PNChartLabel alloc] initWithFrame:CGRectMake(index * (xLabelMargin + _xLabelWidth) + 30.0, self.frame.size.height - 30.0, _xLabelWidth, 20.0)];
